@@ -1,0 +1,27 @@
+{
+  "name": "react16",
+  "version": "1.0.0",
+  "description": "Compare React 16 perf improvements",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd dist && node server.js",
+    "test": "npm run test",
+    "webpack": "webpack"
+  },
+  "author": "Aditya Pratap Singh <adisinghrajput@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.1",
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^7.1.2",
+    "babel-preset-react": "^6.11.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "json-loader": "^0.5.4",
+    "webpack": "^3.6.0",
+    "webpack-node-externals": "^1.6.0"
+  }
+}
