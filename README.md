@@ -42,4 +42,10 @@ export default App;
 ```
 
 ## Results
-The results of the benchmark for some iterations are mentioned [here](https://github.com/addityasingh/react-compare/blob/master/perf/results.md)
+The detailed results of the benchmark for some iterations are mentioned [here](https://github.com/addityasingh/react-compare/blob/master/perf/results.md), but the summarised % improvement in React **16.0.0** over **15.6.0** is shown below:
+
+|#| Node version | Latency (ms) | Request (/sec) | Bytes/sec | Response Size |
+|-----|-----|-----|-----|-----|-----|
+| 1| 7.8 |73.1353478 |295.2627512 | 8.216432866| 76.8|
+| 2| 8.4 |73.62467834 |302.5751141 | 6.896551724| 76.8|
+
