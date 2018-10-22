@@ -4,9 +4,11 @@
   "description": "Compare React 16 perf improvements",
   "main": "index.js",
   "scripts": {
-    "start": "npm run webpack && cd dist && node server.js",
-    "test": "npm run test",
-    "webpack": "webpack"
+    "compile:client": "webpack --config webpack.config.client.js",
+    "compile:server": "webpack --config webpack.config.server.js",
+    "compile": "npm run compile:client && npm run compile:server",
+    "start": "npm run compile && cd dist && node server.js",
+    "test": "npm run test"
   },
   "author": "Aditya Pratap Singh <adisinghrajput@gmail.com>",
   "license": "MIT",

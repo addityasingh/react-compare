@@ -24,7 +24,7 @@ const commonLoaders = [
 ];
   
 module.exports = [{
-    entry: './index.js',
+    entry: './server/index.js',
     output: {
       path: path.resolve(__dirname, "dist"),
       filename: 'server.js',

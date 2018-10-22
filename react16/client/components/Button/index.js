@@ -12,8 +12,7 @@ const VariantButton = () => (
     <ABTestContext.Consumer>
     {val => {
         const componentPath = variantMap[val];
-        const Button = LoadableComponent(componentPath);
-        return <Button />
+        return <LoadableComponent componentPath={componentPath} />;
     }}
     </ABTestContext.Consumer>
 );
