@@ -7,10 +7,17 @@ const app = express();
 
 export default () => {
     app.get('/', (request, response) => {
-			response.write('<!DOCTYPE html><html><head><title>My Page</title></head><body>');
+			response.write(`<!DOCTYPE html><html>
+				<head>
+					<title>My Page</title>
+					<link href='./styles.css' rel="stylesheet">
+				</head>
+			<body>`);
 			response.write('<div id="root">');
 			response.write(renderToString(App));
-			response.write('</div></body></html>');
+			response.write(`</div>
+				</body>
+			</html>`);
 			response.end();
     });
 

@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const nodeExternals = require('webpack-node-externals');
 
 const isProduction = true; //process.env.NODE_ENV === 'production';
@@ -10,7 +10,16 @@ const productionPluginDefine = isProduction ? [
 const commonLoaders = [
     {
         test: /\.json$/,
-        loader: 'json-loader'
+        use: ['json-loader']
+    },
+    {
+      test: /\.css$/,
+      use: [
+        {
+          loader: MiniCssExtractPlugin.loader,
+        },
+        "css-loader"
+      ]
     }
 ];
   
@@ -32,12 +41,22 @@ module.exports = [{
       __dirname: false
     },
     externals: nodeExternals(),
-    plugins: productionPluginDefine,
+    plugins: productionPluginDefine.concat([
+      new MiniCssExtractPlugin({
+        // Options similar to the same options in webpackOptions.output
+        // both options are optional
+        filename: "[name].css",
+        chunkFilename: "[id].css"
+      })
+    ]),
+    resolve: {
+      extensions: [' ', '.js', '.jsx', '.css']
+    },
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.js$/,
-          loader: 'babel-loader'
+          use: ['babel-loader']
         }
       ].concat(commonLoaders)
     }

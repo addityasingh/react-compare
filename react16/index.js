@@ -3,14 +3,23 @@ const { renderToString } = require('react-dom/server');
 // const React = require('react');
 import React from 'react';
 // const App = require('./components/App');
-import App from './components/App.js';
+import App from './client/components/App/App.js';
 const app = express();
 
+app.use(express.static('./'));
+
 app.get('/', (request, response) => {
-    response.write('<!DOCTYPE html><html><head><title>My Page</title></head><body>');
+    response.write(`<!DOCTYPE html><html>
+        <head>
+            <title>My Page</title>
+            <link href='main.css' rel="stylesheet">
+        </head>
+    <body>`);
     response.write('<div id="root">');
     response.write(renderToString(<App/>));
-    response.write('</div></body></html>');
+    response.write(`</div>
+        </body>
+    </html>`);
     response.end();
 });
 

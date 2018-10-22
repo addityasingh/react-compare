@@ -16,5 +16,5 @@ app.get('/', (request, response) => {
 
 app.listen(3001, function (err) {
     if (err) throw err;
-    console.log(`React15 server listening on ${3000}`)
+    console.log(`React15 server listening on ${3001}`)
 });
