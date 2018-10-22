@@ -1,0 +1,26 @@
+.orange {
+    background-color: #e5b050;
+    color: white;
+    height: 40px;
+    width: 160px;
+    font-size: 14px;
+    border-radius: 24px;
+}
+
+.green {
+    background-color: #97b997;
+    color: white;
+    height: 40px;
+    width: 160px;
+    font-size: 14px;
+    border-radius: 24px;
+}
+
+.black {
+    background-color: #5f5858;
+    color: white;
+    height: 40px;
+    width: 160px;
+    font-size: 14px;
+    border-radius: 24px;
+}

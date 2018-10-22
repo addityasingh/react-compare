@@ -1,14 +1,21 @@
 import React from 'react';
-import './Button.css';
+import ABTestContext from '../../contexts/ABTestContext';
+import LoadableComponent from '../LoadableComponent';
 
-const Button = (props) => (
-    <button className={props.colorClass} >
-        {props.text}
-    </button>
-);
-
-Button.defaultProps = {
-    text: 'click me!'
+const variantMap = {
+    'control': '../Button/ButtonControl',
+    'test-a': '../Button/ButtonA',
+    'test-b': '../Button/ButtonB',
 };
 
-export default Button;
+const VariantButton = () => (
+    <ABTestContext.Consumer>
+    {val => {
+        const componentPath = variantMap[val];
+        const Button = LoadableComponent(componentPath);
+        return <Button />
+    }}
+    </ABTestContext.Consumer>
+);
+
+export default VariantButton;
