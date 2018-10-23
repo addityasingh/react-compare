@@ -18,7 +18,7 @@ app.get('/', (request, response) => {
     response.write('<div id="root">');
     response.write(renderToString(<App/>));
     response.write(`</div>
-        <script src='client.js'></script>
+        <script src='main.bundle.js'></script>
         </body>
     </html>`);
     response.end();

@@ -3,7 +3,7 @@ import ABTestContext from '../../contexts/ABTestContext';
 import Button from '../Button';
 
 const Toolbar = (props) => (
-    <ABTestContext.Provider value={'test-a'}>
+    <ABTestContext.Provider value={'ButtonB'}>
         <Button></Button>
     </ABTestContext.Provider>
 );

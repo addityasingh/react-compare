@@ -23,9 +23,11 @@ const commonLoaders = [
   
 module.exports = [{
     entry: './client/index.js',
+    mode: 'development',
     output: {
       path: path.resolve(__dirname, "dist"),
-      filename: 'client.js',
+      filename: 'main.bundle.js',
+      chunkFilename: '[name].bundle.js',
       publicPath: '/'
     },
     // externals: nodeExternals(),
@@ -40,9 +42,6 @@ module.exports = [{
     target: "web",
     resolve: {
       extensions: [' ', '.js', '.jsx', '.css'],
-    //   modules: [
-    //     path.resolve('./client/components')
-    //   ]
     },
     module: {
       rules: [
