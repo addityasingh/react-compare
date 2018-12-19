@@ -9,6 +9,10 @@ const app = express();
 app.use(express.static('./'));
 
 app.get('/', (request, response) => {
+    const {
+        variant = 'ButtonA'
+    } = request.query;
+
     response.write(`<!DOCTYPE html><html>
         <head>
             <title>My Page</title>
@@ -16,7 +20,7 @@ app.get('/', (request, response) => {
         </head>
     <body>`);
     response.write('<div id="root">');
-    response.write(renderToString(<App/>));
+    response.write(renderToString(<App variant={variant}/>));
     response.write(`</div>
         <script src='main.bundle.js'></script>
         </body>
